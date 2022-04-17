@@ -7,7 +7,7 @@ export default class CreateUserUseCase {
         this.userRepository = userRepository;
     }
 
-    async execute(name : string, email: string, password: string, isAdmin: boolean) {
+    public async execute(name : string, email: string, password: string, isAdmin: boolean) {
         return await this.userRepository.create(name, email, password, isAdmin);
     }
 }

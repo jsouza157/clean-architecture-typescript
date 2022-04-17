@@ -1,12 +1,14 @@
 import { Request, Response } from "express";
-import UserRepository from "../../Infra/Repository/UserRepository";
-import CreateUserUseCase from "../UseCases/CreateUserUseCase";
+
+import CreateUserUseCase from "../Cor/UseCases/CreateUserUseCase";
+import UserRepository from "../Infra/Repository/UserRepository";
+
 
 export default class CreateUserController {
     constructor() {
     }
 
-    async create(req : Request, res : Response) {
+    public async create(req : Request, res : Response) {
         try {
             const userData = req.body;
             const createUserUseCase = new CreateUserUseCase(new UserRepository);
